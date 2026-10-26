@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f7f4">
+    <meta name="description" content="Find free peer tutoring and skill swaps with other students.">
+    <title>SkillSwap — learn together</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="SkillSwap home">
+        <span class="brand-mark" aria-hidden="true">S</span>
+        <span>skill<span class="brand-accent">swap</span></span>
+      </a>
+      <a class="header-link" href="#community">Explore students <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main id="home">
+      <section class="hero page-width" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> Better together, never expensive</p>
+          <h1 id="hero-title">Learn a little.<br><span>Teach a little.</span></h1>
+          <p class="hero-description">Find a campus study buddy to help with a tough topic—or trade what you know. No tutors, no fees, just students helping students.</p>
+          <a class="button button-primary hero-button" href="#post-form">Find your study buddy <span aria-hidden="true">↓</span></a>
+          <div class="hero-note"><span aria-hidden="true">✳</span> Free peer support, on your schedule</div>
+        </div>
+        <div class="hero-art" aria-label="Illustration of students sharing knowledge">
+          <div class="art-spark spark-one" aria-hidden="true">✳</div>
+          <div class="art-spark spark-two" aria-hidden="true">✦</div>
+          <div class="art-note note-top"><span class="note-icon">∑</span><span><strong>Calculus</strong><small>made a little clearer</small></span></div>
+          <div class="art-circle">
+            <div class="art-person person-left"><span class="person-hair"></span><span class="person-face">◡</span><span class="person-body"></span></div>
+            <div class="art-person person-right"><span class="person-hair"></span><span class="person-face">◡</span><span class="person-body"></span></div>
+            <div class="art-book" aria-hidden="true"><span>↗</span><i></i><i></i><i></i></div>
+          </div>
+          <div class="art-note note-bottom"><span class="note-icon note-heart">♡</span><span><strong>Good things grow</strong><small>when we share what we know</small></span></div>
+          <span class="art-label">your campus, connected</span>
+        </div>
+      </section>
+
+      <section class="post-section" id="post-form" aria-labelledby="post-title">
+        <div class="page-width post-layout">
+          <div class="section-intro">
+            <p class="eyebrow">01 <span class="eyebrow-rule"></span> Put it out there</p>
+            <h2 id="post-title">Find help.<br>Share skills.</h2>
+            <p id="post-intro-description">Choose your path to find a peer tutor or share what you know with students who need a hand.</p>
+            <div class="privacy-note"><span aria-hidden="true">✦</span><span><strong>Your people, your pace.</strong><br>Your post stays on this device. Share only a contact you’re comfortable with.</span></div>
+          </div>
+          <form class="post-form" id="post-form-element" novalidate>
+            <div class="form-heading">
+              <div><span class="step-label">YOUR SKILLS, YOUR WAY</span><h3 id="path-title">Find a study buddy</h3></div>
+              <span class="form-spark" aria-hidden="true">✳</span>
+            </div>
+            <p class="path-description" id="path-description">Tell the community what you’re working on and when you’d like to meet.</p>
+            <div class="field">
+              <label for="name">Your name</label>
+              <input id="name" name="name" autocomplete="name" placeholder="e.g. Jordan Lee" required maxlength="60">
+              <span class="field-error" id="name-error"></span>
+            </div>
+            <fieldset class="field post-type-field">
+              <legend>Choose your path</legend>
+              <div class="choice-row">
+                <label class="choice-card seeker-choice"><input type="radio" name="kind" value="need" checked><span class="choice-icon" aria-hidden="true">?</span><span><strong>Looking for Help</strong><small>Find a peer to help you learn</small></span></label>
+                <label class="choice-card provider-choice"><input type="radio" name="kind" value="offer"><span class="choice-icon offer-icon" aria-hidden="true">✳</span><span><strong>Providing Help</strong><small>Share a skill or tutor a peer</small></span></label>
+              </div>
+            </fieldset>
+            <div class="field">
+              <label for="topic" id="topic-label">Course or topic you need help with</label>
+              <input id="topic" name="topic" placeholder="e.g. Intro to Statistics" required maxlength="80">
+              <span class="field-error" id="topic-error"></span>
+            </div>
+            <div class="field">
+              <label for="teach-back" id="teach-back-label">Skill you can share in return <span class="optional">OPTIONAL</span></label>
+              <input id="teach-back" name="teachBack" placeholder="e.g. Spanish conversation" maxlength="80">
+              <span class="field-hint" id="teach-back-hint">Leave blank if you’d just like free peer help.</span>
+            </div>
+            <div class="field">
+              <label for="format">Preferred format</label>
+              <select id="format" name="format" required>
+                <option value="">Choose one</option>
+                <option value="online">Online</option>
+                <option value="in person">In person</option>
+              </select>
+              <span class="field-error" id="format-error"></span>
+            </div>
+            <fieldset class="field availability-field" id="availability-field">
+              <legend>When are you free?</legend>
+              <p class="field-hint">Add specific days and start/end times. You can add more than one time block.</p>
+              <div class="availability-slots" id="availability-slots">
+                <div class="availability-slot">
+                  <select name="availabilityDay" aria-label="Available day" required>
+                    <option value="">Day</option>
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                    <option value="Saturday">Saturday</option>
+                    <option value="Sunday">Sunday</option>
+                  </select>
+                  <input type="time" name="availabilityStart" aria-label="Start time" required>
+                  <input type="time" name="availabilityEnd" aria-label="End time" required>
+                  <button class="remove-slot" type="button" aria-label="Remove time block" disabled>×</button>
+                </div>
+              </div>
+              <template id="availability-slot-template">
+                <div class="availability-slot">
+                  <select name="availabilityDay" aria-label="Available day" required>
+                    <option value="">Day</option>
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                    <option value="Saturday">Saturday</option>
+                    <option value="Sunday">Sunday</option>
+                  </select>
+                  <input type="time" name="availabilityStart" aria-label="Start time" required>
+                  <input type="time" name="availabilityEnd" aria-label="End time" required>
+                  <button class="remove-slot" type="button" aria-label="Remove time block">×</button>
+                </div>
+              </template>
+              <button class="add-slot" id="add-availability-slot" type="button">+ Add another time block</button>
+              <span class="field-error" id="availability-error"></span>
+            </fieldset>
+            <div class="field">
+              <label for="contact">Email or Discord handle</label>
+              <input id="contact" name="contact" placeholder="e.g. jordan@email.com or @jordan" required maxlength="100">
+              <span class="field-hint">We’ll only show this if someone wants to connect.</span>
+              <span class="field-error" id="contact-error"></span>
+            </div>
+            <button class="button button-primary submit-button" type="submit"><span id="submit-post-label">Post your help request</span><span aria-hidden="true">↗</span></button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+      <section class="community page-width" id="community" aria-labelledby="community-title">
+        <div class="community-heading">
+          <div>
+            <p class="eyebrow">02 <span class="eyebrow-rule"></span> Your campus community</p>
+            <h2 id="community-title">A little help goes<br><span>a long way.</span></h2>
+          </div>
+          <p class="community-subtitle">Find your people, share your skills, and make the hard stuff feel doable.</p>
+        </div>
+        <div class="match-banner" id="match-banner" role="status" aria-live="polite" hidden></div>
+        <div class="discovery-bar">
+          <label class="search-box" for="search">
+            <span aria-hidden="true">⌕</span>
+            <input id="search" type="search" placeholder="Search a topic, name, or course…" aria-label="Search posts by topic or name">
+            <kbd>/</kbd>
+          </label>
+          <div class="filter-group" role="group" aria-label="Filter posts">
+            <button class="filter-chip active" type="button" data-filter="all" aria-pressed="true">All posts</button>
+            <button class="filter-chip" type="button" data-filter="online" aria-pressed="false"><span class="filter-dot dot-online"></span>Online</button>
+            <button class="filter-chip" type="button" data-filter="in person" aria-pressed="false"><span class="filter-dot dot-person"></span>In person</button>
+            <button class="filter-chip" type="button" data-filter="swap" aria-pressed="false"><span class="filter-dot dot-swap"></span>Swap</button>
+            <button class="filter-chip" type="button" data-filter="free help" aria-pressed="false"><span class="filter-dot dot-free"></span>Free help</button>
+          </div>
+        </div>
+        <div class="results-heading"><p id="results-count" aria-live="polite"></p><button class="clear-filters" id="clear-filters" type="button" hidden>Clear filters</button></div>
+        <div class="post-grid" id="post-grid" aria-live="polite"></div>
+        <div class="empty-state" id="empty-state" hidden>
+          <span class="empty-icon" aria-hidden="true">✳</span>
+          <h3>No matches just yet</h3>
+          <p>Try another search or clear your filters. Your study buddy might be one topic away.</p>
+          <button class="button button-secondary" id="empty-clear" type="button">Show everyone</button>
+        </div>
+        <div class="community-footer"><span aria-hidden="true">✳</span> Learning feels lighter when we do it together.</div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="#home"><span class="brand-mark" aria-hidden="true">S</span><span>skill<span class="brand-accent">swap</span></span></a>
+      <p>Made for students, by students. Keep it kind. Keep it free.</p>
+      <a href="#home" class="back-top">Back to top ↑</a>
+    </footer>
+
+    <dialog class="request-dialog" id="request-dialog" aria-labelledby="dialog-title">
+      <div class="dialog-top"><span class="dialog-mark" aria-hidden="true">✳</span><button class="dialog-close" id="dialog-close" type="button" aria-label="Close request dialog">×</button></div>
+      <p class="eyebrow">MAKE THE FIRST MOVE</p>
+      <h2 id="dialog-title">Say hello to <span id="request-name"></span></h2>
+      <p class="dialog-description">Here’s a little note to get the conversation started. Make it yours before you send.</p>
+      <label class="sr-only" for="request-message">Your message</label>
+      <textarea id="request-message" rows="5"></textarea>
+      <div class="dialog-actions"><button class="button button-secondary" id="copy-message" type="button">Copy message</button><a class="button button-primary" id="email-link" href="#">Open email <span aria-hidden="true">↗</span></a></div>
+      <div class="dialog-contact-row"><p class="dialog-contact" id="dialog-contact"></p><button class="copy-contact" id="copy-contact" type="button">Copy contact</button></div>
+      <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
+    </dialog>
+  </body>
+</html>
